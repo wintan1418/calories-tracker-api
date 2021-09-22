@@ -9,4 +9,12 @@ def not_found(errors)
   render json: errors,status: :not_found
 end
 
+def not_unique(errors)
+  render json:errors, status: :detected_error
+end
+
+def invalid(errors)
+  render json:errors, status: : invalid
+end
+
 end
