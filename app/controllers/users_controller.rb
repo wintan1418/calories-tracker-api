@@ -13,7 +13,11 @@ def show
   return render json: @user, status: :permit if @user
 end
 
+private
 
+def user_params
+  params.permit(username, :email)
+end
 
 
 
