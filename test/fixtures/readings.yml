@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meal: MyString
+  calorie_measure: 1.5
+  user: 
+  date: 2021-09-22 10:19:49
+
+two:
+  meal: MyString
+  calorie_measure: 1.5
+  user: 
+  date: 2021-09-22 10:19:49
