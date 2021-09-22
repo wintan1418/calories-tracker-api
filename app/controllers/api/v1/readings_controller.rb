@@ -1,4 +1,4 @@
-class ReadingsController < ApplicationController
+class Api::V1::ReadingsController < AuthController
   before_action :set_reading, only: %i[ show update destroy ]
 
   # GET /readings
