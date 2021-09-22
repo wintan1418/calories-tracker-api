@@ -10,7 +10,7 @@ end
 
 def show
   @user = User.find(params[:email])
-  return render json: @user, status: :permit if @user
+  return render json: @user, status: :ok if @user
 end
 
 private
@@ -18,7 +18,5 @@ private
 def user_params
   params.permit(username, :email)
 end
-
-
 
 end

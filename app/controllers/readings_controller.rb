@@ -8,22 +8,14 @@ class ReadingsController < ApplicationController
     render json: @user.readings, status: :ok
   end
 
-  # GET /readings/1
-  # GET /readings/1.json
-  def show
-    
-  end
-
+  
   # POST /readings
   # POST /readings.json
   def create
-    @reading = Reading.new(reading_params)
+    new_reading = Reading.create(reading_params)
 
-    if @reading.save
-      render :show, status: :created, location: @reading
-    else
-      render json: @reading.errors, status: :unprocessable_entity
-    end
+      render json: new_reading, status: :created
+  
   end
 
   # PATCH/PUT /readings/1
@@ -42,11 +34,9 @@ class ReadingsController < ApplicationController
     @reading.destroy
   end
 
-  private
+  
     # Use callbacks to share common setup or constraints between actions.
-    def set_reading
-      @reading = Reading.find(params[:id])
-    end
+    private
 
     # Only allow a list of trusted parameters through.
     def reading_params
