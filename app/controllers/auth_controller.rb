@@ -6,3 +6,4 @@ def permit_request
 rescue JWT:: VerificationError, JWT::DecodeError  
   render json: {errors: ['You are not Authenticating'], status: :unauthorized}
 end
+end

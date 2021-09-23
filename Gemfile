@@ -23,6 +23,21 @@ gem 'jwt', '~> 2.2', '>= 2.2.3'
 gem 'active_model_serializers', '~> 0.10.12'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
+end
+
+group :development do
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails', '~> 6.1'
+  gem 'faker'
+  gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
+end
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'

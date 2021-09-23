@@ -10,11 +10,11 @@ def not_found(errors)
 end
 
 def not_unique(errors)
-  render json:errors, status: :detected_error
+  render json:errors, status: :internal_server_error
 end
 
 def invalid(errors)
-  render json:errors, status: : invalid
+  render json:errors, status: :unprocessable_entity
 end
 
 end

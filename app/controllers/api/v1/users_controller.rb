@@ -1,6 +1,12 @@
 class Api::V1::UsersController < AuthController
 
-def create
+def index
+@users =User.all
+
+render json @user
+end
+
+  def create
   @user = User.find_by(email:params[:email ])
   return render json: {success: false, message: 'There is a user with this Email'}, status: 409 if @user
 
