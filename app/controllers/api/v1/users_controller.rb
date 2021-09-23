@@ -1,9 +1,9 @@
 class Api::V1::UsersController < AuthController
 
 def index
-@users =User.all
+@user =User.all
 
-render json @user
+render json: @user
 end
 
   def create

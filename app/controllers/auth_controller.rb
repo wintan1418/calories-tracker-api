@@ -1,8 +1,8 @@
 class AuthController < ApplicationController
-before_action :authorize_request
+# before_action :authorize_request
 
-def permit_request
-  AuthorizationServices.new(request.headers).authenticate_request!
+def authorize_request
+  AuthorizationSessions.new(request.headers).permit_request!
 rescue JWT:: VerificationError, JWT::DecodeError  
   render json: {errors: ['You are not Authenticating'], status: :unauthorized}
 end

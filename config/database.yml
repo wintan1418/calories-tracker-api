@@ -24,7 +24,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: calorie_tracker
+  database: calorie_tracking
   pool: 5
   username: wintan1418
   password:
@@ -64,7 +64,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: calorie_tracker
+  database: calorie_tracking
   pool: 5
   username: wintan1418
   password:
@@ -93,5 +93,5 @@ test:
 #
 production:
   <<: *default
-  database: calorie_tracker_production
+  database: calorie_tracking_production
   

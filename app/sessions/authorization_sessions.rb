@@ -16,6 +16,4 @@ end
 def verify_token
   JsonWebToken.verify(http_token)
 end
-
-
 end
