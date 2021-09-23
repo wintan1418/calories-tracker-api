@@ -8,3 +8,12 @@ Rspec.describe Api::V1::ReadingsController.type: :controller do
 
   end
 end
+
+describe 'Post api/v1/readings' do
+  before {post :create }
+  context 'when authorized' do
+    it {expect{response} to include_http_status(:unprocessable_entity)}
+    it {expect(response.content_type).to include('application/json') }
+    it do
+      should rescue_from(ActiveRecord::RecordInvalid),with(:invalid)
+  end
