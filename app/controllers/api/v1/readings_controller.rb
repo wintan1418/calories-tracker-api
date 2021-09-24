@@ -4,8 +4,7 @@ class Api::V1::ReadingsController < AuthController
   def index
     # @reading = @current_user.reading
     # render json: @reading, status: :ok
-    @readings = @user.readings
-
+    @readings = current_user.results
     render json: @readings, status: :ok
   end
 
@@ -13,15 +12,30 @@ class Api::V1::ReadingsController < AuthController
   # POST /readings
   # POST /readings.json
   def create
-    new_reading = current_user.Reading.create(reading_params)
-
-      render json: new_reading, status: :created
-  
+    @reading = current_user.readings.create!(result_params)
+    render json :@readings, status: :created
   end
 
 
- 
+ def show
+  @result = Result.find(params[:id])
+  render json :@readings
+ end
 
+ def edit
+  @reading = Reading.find(params[:id])
+ end
+
+
+ def update
+  @reading = Reading.find(params[:id])
+
+  if @reading.update(reading_params)
+    redirect_to @reading
+  else
+    render :edit
+  end
+  end
   
     # Use callbacks to share common setup or constraints between actions.
     private

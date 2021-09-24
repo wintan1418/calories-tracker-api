@@ -11,7 +11,6 @@ end
   # return render json: {success: false, message: 'There is a user with this Email'}, status: 409 if @user
 
   user =User.create!(user_params)
-  session[:current_user_id] = user.id
   render json: user, status: :created
 
 end
