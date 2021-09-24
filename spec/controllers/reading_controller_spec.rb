@@ -1,5 +1,5 @@
 require 'rails_helper'
-Rspec.describe Api::V1::ReadingsController.type: :controller do
+Rspec.describe Api::V1::ReadingsController, type: :controller do
   before {give(controller).to recieve(:authorize_request).and_return(true) }
   describe "use permit_request before action" do
     context 'when user is authorized 'do
@@ -17,3 +17,4 @@ describe 'Post api/v1/readings' do
     it do
       should rescue_from(ActiveRecord::RecordInvalid),with(:invalid)
   end
+end

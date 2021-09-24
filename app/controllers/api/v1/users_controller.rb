@@ -7,11 +7,13 @@ render json: @user
 end
 
   def create
-  @user = User.find_by(email:params[:email ])
-  return render json: {success: false, message: 'There is a user with this Email'}, status: 409 if @user
+  # @user = User.find_by(email:params[:email ])
+  # return render json: {success: false, message: 'There is a user with this Email'}, status: 409 if @user
 
   user =User.create!(user_params)
+  session[:current_user_id] = user.id
   render json: user, status: :created
+
 end
 
 def show
@@ -22,7 +24,7 @@ end
 private
 
 def user_params
-  params.permit(username, :email)
+  params.permit(:username, :email)
 end
 
 end
