@@ -1,9 +1,9 @@
-class AuthenUser
-  def initialize(email)
+class AuthUser
+  def initialize(email, password)
     @email = email
     @password = password
   end
-t
+
   def call
     JsonWebToken.encode(user_id: user.id) if user
   end
@@ -17,6 +17,6 @@ t
     user = User.find_by(email: email)
     return user if user && user.authenticate(password)
     # raise alarm if details are wrong
-    raise(ExceptionHandler::AuthenticationError, Message.invalid_credentials)
+    raise(ExceptionHandler::AuthenticationError, Feedback.invalid_credentials)
   end
 end

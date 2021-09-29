@@ -6,14 +6,17 @@ def index
 
 render json: @user
 end
+def details
+  json_response(current_user)
+end
 
   def create
   # @user = User.find_by(email:params[:email ])
   # return render json: {success: false, message: 'There is a user with this Email'}, status: 409 if @user
 
   user =User.create!(user_params)
-  auth_token = AuthenticateUser.new(user.email, user.password).call
-  response = { message: Message.account_created, auth_token: auth_token }
+  auth_token = AuthUser.new(user.email, user.password).call
+  response = { message: Feedback.account_created, auth_token: auth_token }
   json_response(response, :created)
 end
 
