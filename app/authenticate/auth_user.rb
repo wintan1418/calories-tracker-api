@@ -1,6 +1,7 @@
 class AuthenUser
   def initialize(email)
     @email = email
+    @password = password
   end
 t
   def call
@@ -9,12 +10,12 @@ t
 
   private
 
-  attr_reader :email
+  attr_reader :email, :password
 
   # verify user credentials
   def user
     user = User.find_by(email: email)
-    return user 
+    return user if user && user.authenticate(password)
     # raise alarm if details are wrong
     raise(ExceptionHandler::AuthenticationError, Message.invalid_credentials)
   end

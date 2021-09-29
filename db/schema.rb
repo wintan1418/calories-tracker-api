@@ -17,6 +17,10 @@ ActiveRecord::Schema.define(version: 2021_09_22_091949) do
 
   create_table "readings", force: :cascade do |t|
     t.string "meal"
+    t.float "first_measure"
+    t.float "second_measure"
+    t.float "third_measure"
+    t.float "overall_measure"
     t.bigint "user_id", null: false
     t.float "calorie_measure", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -28,8 +32,12 @@ ActiveRecord::Schema.define(version: 2021_09_22_091949) do
     t.string "username"
     t.string "email"
     t.text "photo"
+    t.string "password_digest"
     t.integer "age"
     t.string "sex"
+    t.decimal "present_measure"
+    t.decimal "current_measure"
+    t.decimal "proposed_measure"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

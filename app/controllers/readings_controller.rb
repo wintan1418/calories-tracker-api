@@ -4,7 +4,7 @@ class ReadingsController < ApplicationController
   def index
     # @reading = @current_user.reading
     # render json: @reading, status: :ok
-    @readings = current_user.results
+    @readings = current_user.readings
     render json: @readings, status: :ok
   end
 
@@ -12,13 +12,13 @@ class ReadingsController < ApplicationController
   # POST /readings
   # POST /readings.json
   def create
-    @reading = current_user.readings.create!(result_params)
+    @reading = current_user.readings.create!(reading_params)
     render json :@readings, status: :created
   end
 
 
  def show
-  @result = Result.find(params[:id])
+  @reading = Reading.find(params[:id])
   render json :@readings
  end
 
@@ -50,6 +50,6 @@ class ReadingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reading_params
-      params.require(:reading).permit(:meal, :calorie_measure)
+      params.require(:reading).permit(:meal, :calorie_measure, :first_measure, :second_measure, :third_measure, :overall_measure)
     end
 end

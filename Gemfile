@@ -21,6 +21,7 @@ gem 'puma', '~> 5.0'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem "table_print"
+gem 'rack-cors'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -28,6 +29,7 @@ gem "table_print"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'devise_token_auth'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 

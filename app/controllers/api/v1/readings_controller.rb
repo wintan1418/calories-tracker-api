@@ -4,7 +4,7 @@ class Api::V1::ReadingsController < ApplicationController
   def index
     # @reading = @current_user.reading
     # render json: @reading, status: :ok
-    @readings = current_user.results
+    @readings = current_user.readings
     render json: @readings, status: :ok
   end
 
@@ -18,7 +18,7 @@ class Api::V1::ReadingsController < ApplicationController
 
 
  def show
-  @result = Result.find(params[:id])
+  @readings = Reading.find(params[:id])
   render json :@readings
  end
 
