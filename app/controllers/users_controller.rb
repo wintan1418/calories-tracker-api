@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authorize_request, only: :create
+  
+
 
 def index
 @user =User.all
@@ -11,25 +13,21 @@ def details
 end
 
   def create
-  # @user = User.find_by(email:params[:email ])
-  # return render json: {success: false, message: 'There is a user with this Email'}, status: 409 if @user
-
-  user =User.create!(user_params)
+  user = User.create!(user_params)
   auth_token = AuthUser.new(user.email, user.password).call
   response = { message: Feedback.account_created, auth_token: auth_token }
   json_response(response, :created)
 end
 
-def show
-  @user = User.find(params[:id])
-   render json: @user, status: :ok if @user
+def info
+   json_response(current_user)
 end
 
 private
 
 def user_params
-  params.require(:user)
-        .permit(:username, :email, :password, :sex, :age, :present_measure, :proposed_measure)
+  params
+    .permit(:username, :email, :password, :sex, :age, :present_measure, :proposed_measure)
 end
 
 end
