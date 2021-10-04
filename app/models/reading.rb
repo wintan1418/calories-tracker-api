@@ -1,4 +1,7 @@
 class Reading < ApplicationRecord
-belongs_to :user 
-validates :meal, :calorie_measure, :first_measure, :second_measure, :third_measure, :overall_measure, presence: true
+belongs_to :user
+validates:first_measure,presence: true, numericality: { only_decimal: true }
+validates:second_measure,presence: true, numericality: { only_decimal: true }
+validates:third_measure,presence: true, numericality: { only_decimal: true }
+# overall_measure, presence: true, numericality: { only_decimal: true }
 end

@@ -27,7 +27,7 @@ private
 
 def user_params
   params
-    .permit(:username, :email, :password, :sex, :age, :present_measure, :proposed_measure)
+        .permit(:username, :email, :password, :sex, :age, :present_measure, :proposed_measure)
 end
 
 end
