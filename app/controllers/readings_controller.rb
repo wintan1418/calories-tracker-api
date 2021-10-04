@@ -19,19 +19,19 @@ class ReadingsController < ApplicationController
 
 
  def show
-  @readings = Reading.find(params[:id])
+  @readings = Readings.find(params[:id])
   render json: @readings
  end
 
  def edit
-  @reading = Reading.find(params[:id])
+  @readings = Readings.find(params[:id])
  end
 
 
  def update
-  @reading = Reading.find(params[:id])
+  @readings = Readings.find(params[:id])
 
-  if @reading.update(reading_params)
+  if @readings.update(reading_params)
     redirect_to @reading
   else
     render :edit
