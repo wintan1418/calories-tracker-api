@@ -12,14 +12,14 @@ class ReadingsController < ApplicationController
   # POST /readings
   # POST /readings.json
   def create
-    @reading = current_user.readings.create!(reading_params)
-    render json :@readings, status: :created
+    @readings = current_user.readings.create!(reading_params)
+    render json: @readings, status: :created
   end
 
 
  def show
-  @reading = Reading.find(params[:id])
-  render json :@readings
+  @readings = Reading.find(params[:id])
+  render json: @readings
  end
 
  def edit
