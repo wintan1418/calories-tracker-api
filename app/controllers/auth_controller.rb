@@ -1,6 +1,6 @@
 class AuthController < ApplicationController
   skip_before_action :authorize_request, only: :authenticate
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
     
   # return auth token once user is authenticated
   def authenticate
