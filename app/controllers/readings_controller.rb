@@ -1,5 +1,6 @@
 class ReadingsController < ApplicationController
-  
+  skip_before_action :verify_authenticity_token
+
   
   def index
     # @reading = @current_user.reading
