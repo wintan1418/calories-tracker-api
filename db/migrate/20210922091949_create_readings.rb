@@ -7,7 +7,7 @@ class CreateReadings < ActiveRecord::Migration[6.1]
       t.float :third_measure
       t.float :overall_measure
       t.references :user, null: false, foreign_key: true
-      t.float :calorie_measure, null: false
+      t.float :calorie_measure, 
       t.timestamps
     end
   end

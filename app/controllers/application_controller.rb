@@ -7,6 +7,17 @@ class ApplicationController < ActionController::API
   # called before every action on controllers
   before_action :authorize_request
   attr_reader :current_user
+  
+  # config.middleware.insert_before 0, Rack::Cors do
+  #   allow do
+  #     origins '*'
+  #     resource(
+  #       '*',
+  #       headers: :any,
+  #       methods: [:get, :patch, :put, :delete, :post, :options]
+  #       )
+  #   end
+  # end
 
   private
 

@@ -50,6 +50,6 @@ class ReadingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reading_params
-      params.require(:reading).permit(:meal, :calorie_measure, :first_measure, :second_measure, :third_measure, :overall_measure)
+      params.require(:reading).permit( :first_measure, :second_measure, :third_measure)
     end
 end
