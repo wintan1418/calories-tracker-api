@@ -4,10 +4,9 @@ class ReadingsController < ApplicationController
 
   
   def index
-    # @reading = @current_user.reading
-    # render json: @reading, status: :ok
+   
     @readings = current_user.readings
-    render json: @readings, status: :ok
+    render json(@readings)
   end
 
   
@@ -15,7 +14,7 @@ class ReadingsController < ApplicationController
   # POST /readings.json
   def create
     @readings = current_user.readings.create!(reading_params)
-    render json: @readings, status: :created
+    render json( @readings :created)
   end
 
 
