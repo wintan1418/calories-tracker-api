@@ -1,5 +1,5 @@
-class ApplicationController < ActionController::API
-  # protect_from_forgery with: :exception
+class ApplicationController < ActionController::BASE
+  protect_from_forgery with: :exception
 
   
   include Response
