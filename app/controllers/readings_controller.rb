@@ -11,8 +11,8 @@ class ReadingsController < ApplicationController
 
   
   def create
-    @readings = current_user.readings.create!(reading_params)
-    render json: @readings
+    @reading = current_user.readings.create!(reading_params)
+     json_response(@reading, :created)
   end
 
 
@@ -49,6 +49,6 @@ class ReadingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reading_params
-      params.require(:readings).permit( :first_measure, :second_measure, :third_measure)
+      params.require(:reading).permit( :first_measure, :second_measure, :third_measure)
     end
 end
