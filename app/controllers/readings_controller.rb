@@ -6,7 +6,7 @@ class ReadingsController < ApplicationController
   def index
    
     @readings = current_user.readings
-    render json(@readings)
+     json_response(@readings)
   end
 
   
