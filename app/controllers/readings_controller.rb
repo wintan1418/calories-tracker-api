@@ -10,8 +10,6 @@ class ReadingsController < ApplicationController
   end
 
   
-  # POST /readings
-  # POST /readings.json
   def create
     @readings = current_user.readings.create!(reading_params)
     render json( @readings :created)
