@@ -1,31 +1,36 @@
 class ReadingsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   def index
    
-    @readings = current_user.readings
+    @readings = Reading.where(user_id: current_user.id)
+    puts @readings
      json_response(@readings)
   end
 
   
   def create
-    @reading = current_user.readings.create!(reading_params)
+    @reading = current_user.readings.create(reading_params)
+    puts @reading, current_user, current_user.id
      json_response(@reading, :created)
+    
+     
+      puts  @reading.errors.full_messages
   end
 
 
  def show
-  @readings = Readings.find(params[:id])
+  @readings = Reading.find(params[:id])
   render json: @readings
  end
 
  def edit
-  @readings = Readings.find(params[:id])
+  @readings = Reading.find(params[:id])
  end
 
 
  def update
-  @readings = Readings.find(params[:id])
+  @readings = Reading.find(params[:id])
 
   if @readings.update(reading_params)
     redirect_to @reading
