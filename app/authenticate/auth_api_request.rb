@@ -36,6 +36,7 @@ class AuthApiRequest
     if headers['Authorization'].present?
       return headers['Authorization'].split(' ').last
     end
-      raise(ExceptionHandler::MissingToken, Feedback.missing_token)
+
+    raise(ExceptionHandler::MissingToken, Feedback.missing_token)
   end
 end

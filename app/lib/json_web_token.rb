@@ -10,7 +10,6 @@ class JsonWebToken
   end
 
   def self.decode(token)
-
     body = JWT.decode(token, HMAC_SECRET)[0]
     HashWithIndifferentAccess.new body
     # rescue from all decode errors

@@ -2,14 +2,13 @@ class ApplicationController < ActionController::API
   # include ActionController::RequestForgeryProtection
   # protect_from_forgery with: :null_session
 
-  
   include Response
   include ExceptionHandler
 
   # called before every action on controllers
   before_action :authorize_request
   attr_reader :current_user
-  
+
   # config.middleware.insert_before 0, Rack::Cors do
   #   allow do
   #     origins '*'

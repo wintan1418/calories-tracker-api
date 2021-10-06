@@ -12,7 +12,13 @@ class ReadingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create reading" do
     assert_difference('Reading.count') do
-      post readings_url, params: { reading: { calorie_measure: @reading.calorie_measure, date: @reading.date, meal: @reading.meal, user: @reading.user } }, as: :json
+      post readings_url,
+           params: {
+             reading: { calorie_measure: @reading.calorie_measure,
+                        date: @reading.date,
+                        meal: @reading.meal,
+                        user: @reading.user }
+           }, as: :json
     end
 
     assert_response 201
@@ -24,7 +30,11 @@ class ReadingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update reading" do
-    patch reading_url(@reading), params: { reading: { calorie_measure: @reading.calorie_measure, date: @reading.date, meal: @reading.meal, user: @reading.user } }, as: :json
+    patch reading_url(@reading),
+          params: { reading: { calorie_measure: @reading.calorie_measure,
+                               date: @reading.date,
+                               meal: @reading.meal,
+                               user: @reading.user } }, as: :json
     assert_response 200
   end
 
