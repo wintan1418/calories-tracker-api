@@ -39,18 +39,8 @@ class ReadingsController < ApplicationController
   end
   end
   
-    # Use callbacks to share common setup or constraints between actions.
     private
 
-
-    # def current_user
-    #   @current_user ||= session[:current_user_id] &&
-    #     User.find_by(id: session[:current_user_id])
-    # end
-  
-
-
-    # Only allow a list of trusted parameters through.
     def reading_params
       params.require(:reading).permit( :first_measure, :second_measure, :third_measure, :overall_measure)
     end
