@@ -5,7 +5,7 @@ This app is a built using React/Redux and Ruby on Rails framework,a fullstack sc
 
 # Live demo link
 
-<a href="https://wonderful-kowalevski-cb2866.netlify.app/"><img src='https://www.netlify.com/img/deploy/button.svg'></a>
+<a href="https://healthjuwon.herokuapp.com"><img src='https://www.netlify.com/img/deploy/button.svg'></a>
 
 # Screenshot of the Project
 
