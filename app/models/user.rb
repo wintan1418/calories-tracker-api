@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :sex, presence: true
   validates :age, presence: true
   validates :password_digest, presence: true
-  validates :present_measure,  presence: true
+  validates :present_measure, presence: true
   validates :proposed_measure, presence: true
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-Rspec.describe User, type: :model do
+RSpec.describe User, type: :model do
   it { should have_many(:readings) }
   it { should validate_presence_of(:username) }
   it { should validate_presence_of(:email) }
