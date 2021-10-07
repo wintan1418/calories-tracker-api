@@ -9,5 +9,5 @@ RSpec.describe Reading, type: :model do
   it { should validates_numericality_of(:second_measure) }
   it { should validates_numericality_of(:third_measure) }
   it { should validates_presence_of(overall_measure) }
-  it { should validates_numericality_of(:overall_measure)}
+  it { should validates_numericality_of(:overall_measure) }
 end
