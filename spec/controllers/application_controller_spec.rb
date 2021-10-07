@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe ApplicationController, type: :controller do
-  let!(:user) { (:user) }
+  let!(:user) { :user }
   # set headers for authorization
   let(:headers) { { 'Authorization' => token_generator(user) } }
   let(:invalid_headers) { { 'Authorization' => nil } }

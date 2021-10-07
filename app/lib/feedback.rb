@@ -1,14 +1,14 @@
 class Feedback
-  def self.not_found(record = "record")
+  def self.not_found(record = 'record')
     "Ooops!, #{record} does not exist!!"
   end
 
   def self.invalid_token
-    "Wrong token"
+    'Wrong token'
   end
 
   def self.invalid_credentials
-    "wrong credentials"
+    'wrong credentials'
   end
 
   def self.missing_token
@@ -16,11 +16,11 @@ class Feedback
   end
 
   def self.unauthorized
-    "request unauthorized"
+    'request unauthorized'
   end
 
   def self.account_created
-    "Congrats,your account is successfully opened"
+    'Congrats,your account is successfully opened'
   end
 
   def self.account_not_created

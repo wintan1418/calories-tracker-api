@@ -15,7 +15,7 @@ class AuthUser
   # verify user credentials
   def user
     user = User.find_by(email: email)
-    return user if user && user.authenticate(password)
+    return user if user&.authenticate(password)
 
     # raise alarm if details are wrong
     raise(ExceptionHandler::AuthenticationError, Feedback.invalid_credentials)
