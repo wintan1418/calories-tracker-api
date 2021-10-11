@@ -15,20 +15,20 @@ module ExceptionHandler
     rescue_from ExceptionHandler::MissingToken, with: :four_twenty_two
     rescue_from ExceptionHandler::InvalidToken, with: :four_twenty_two
 
-    rescue_from ActiveRecord::RecordNotFound do |egg|
-      json_response({ message: egg.message }, :not_found)
+    rescue_from ActiveRecord::RecordNotFound do |e|
+      json_response({ message: e.message }, :not_found)
     end
   end
 
   private
 
   # JSON response with message; Status code 422 - unprocessable entity
-  def four_twenty_two(_egg)
+  def four_twenty_two(egg)
     json_response({ message: egg.message }, :unprocessable_entity)
   end
 
   # JSON response with message; Status code 401 - Unauthorized
-  def unauthorized_request(_egg)
+  def unauthorized_request(egg)
     json_response({ message: egg.message }, :unauthorized)
   end
 end
