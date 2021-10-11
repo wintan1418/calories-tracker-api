@@ -7,7 +7,7 @@ class CreateReadings < ActiveRecord::Migration[6.1]
       t.float :third_measure
       t.float :overall_measure
       t.references :user, null: false, foreign_key: true
-      t.references :meals, null: false, foreign_key: true
+      t.references :meal, null: false, foreign_key: true
       t.timestamps
     end
   end
