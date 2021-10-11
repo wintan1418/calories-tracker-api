@@ -189,7 +189,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     table_print (1.5.7)
     thor (1.1.0)
     tzinfo (2.0.4)
@@ -220,7 +219,6 @@ DEPENDENCIES
   rubocop (>= 1.0, < 2.0)
   shoulda-matchers (~> 5.0)
   spring
-  sqlite3
   table_print
   tzinfo-data
 
