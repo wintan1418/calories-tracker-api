@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :meals
   # collection do
   root 'users#index'
   post 'auth/login', to: 'auth#authenticate'
