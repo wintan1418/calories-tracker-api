@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'details', to: 'users#info'
 
   resources :readings
+  resources :meals, only: %i[index show]
 
   # end
 end
