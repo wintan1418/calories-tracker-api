@@ -10,8 +10,6 @@ RSpec.describe ApplicationController, type: :controller do
   describe '#authorize_request' do
     context 'when  a auth token is  being passed' do
       before { allow(request).to receive(:headers).and_return(headers) }
-
-      
     end
 
     context 'when a auth token is not being passed' do
