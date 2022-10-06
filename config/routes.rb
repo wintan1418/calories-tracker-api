@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :meals
+  # collection do
+  root 'users#index'
+  post 'auth/login', to: 'auth#authenticate'
+  post '/register', to: 'users#create'
+  post 'details', to: 'users#details'
+
+  resources :readings
+  resources :meals, only: %i[index show]
+
+  # end
 end
